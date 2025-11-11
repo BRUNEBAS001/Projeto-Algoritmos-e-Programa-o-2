@@ -1,0 +1,16 @@
+com\example\taskstodo\repository\TaskRepository.class
+com\example\taskstodo\repository\UserRepository.class
+com\example\tasks\Application.class
+com\example\tasks\repository\TaskRepository.class
+com\example\taskstodo\controller\AuthController.class
+com\example\taskstodo\model\Category.class
+com\example\tasks\controller\AuthController.class
+com\example\taskstodo\model\Task.class
+com\example\tasks\config\DatabaseConfig.class
+com\example\tasks\controller\TaskController.class
+com\example\taskstodo\TasksToDoApplication.class
+com\example\taskstodo\repository\CategoryRepository.class
+com\example\taskstodo\config\StartupConfig.class
+com\example\taskstodo\controller\CategoryController.class
+com\example\taskstodo\controller\TaskController.class
+com\example\taskstodo\model\User.class
