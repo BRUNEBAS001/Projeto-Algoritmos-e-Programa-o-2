@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Task's To Do — Login</title>
+  <link rel="stylesheet" href="/app.css">
+  <style>
+    body.dark {
+      background: linear-gradient(135deg, #1e1e2e 0%, #0f0f1e 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .auth-container {
+      background: rgba(30, 30, 46, 0.95);
+      border: 1px solid rgba(15, 153, 153, 0.3);
+      border-radius: 12px;
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    .auth-container h1 {
+      text-align: center;
+      color: #0f9;
+      margin-top: 0;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .auth-container p {
+      text-align: center;
+      color: #aaa;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      color: #0f9;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid rgba(15, 153, 153, 0.3);
+      background: rgba(50, 50, 80, 0.5);
+      color: #fff;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #0f9;
+      background: rgba(50, 50, 80, 0.8);
+      box-shadow: 0 0 15px rgba(0, 255, 153, 0.2);
+    }
+
+    .form-group input::placeholder {
+      color: #666;
+    }
+
+    .remember-me {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .remember-me input {
+      width: auto;
+      margin-right: 8px;
+      cursor: pointer;
+    }
+
+    .remember-me label {
+      cursor: pointer;
+      margin: 0;
+      color: #aaa;
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #0f9 0%, #0a7a7a 100%);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 15px;
+    }
+
+    .btn-login:hover {
+      background: linear-gradient(135deg, #00ffaa 0%, #00cccc 100%);
+      box-shadow: 0 10px 30px rgba(0, 255, 153, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .btn-login:active {
+      transform: translateY(0);
+    }
+
+    .btn-register-link {
+      width: 100%;
+      padding: 12px;
+      background: transparent;
+      color: #0f9;
+      border: 1px solid rgba(15, 153, 153, 0.5);
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .btn-register-link:hover {
+      border-color: #0f9;
+      background: rgba(0, 255, 153, 0.1);
+    }
+
+    .message {
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 14px;
+      display: none;
+    }
+
+    .message.success {
+      background: rgba(0, 255, 100, 0.1);
+      color: #0f9;
+      border: 1px solid rgba(0, 255, 100, 0.3);
+    }
+
+    .message.error {
+      background: rgba(255, 100, 100, 0.1);
+      color: #ff6464;
+      border: 1px solid rgba(255, 100, 100, 0.3);
+    }
+
+    .footer-link {
+      text-align: center;
+      margin-top: 20px;
+      color: #666;
+      font-size: 12px;
+    }
+
+    .footer-link a {
+      color: #0f9;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .footer-link a:hover {
+      text-decoration: underline;
+    }
+
+    .forgot-password {
+      text-align: right;
+      margin-bottom: 15px;
+    }
+
+    .forgot-password a {
+      color: #0f9;
+      text-decoration: none;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="dark">
+  <div class="auth-container">
+    <h1>📝 Task's To Do</h1>
+    <p>Bem-vindo de volta!</p>
+
+    <div id="message" class="message"></div>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Nome de Usuário</label>
+        <input 
+          id="username" 
+          type="text" 
+          placeholder="Seu nome de usuário"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input 
+          id="password" 
+          type="password" 
+          placeholder="Sua senha"
+          required
+        >
+      </div>
+
+      <div class="remember-me">
+        <input type="checkbox" id="rememberMe" name="rememberMe">
+        <label for="rememberMe">Lembrar-me neste computador</label>
+      </div>
+
+      <button type="submit" class="btn-login">🔓 Entrar</button>
+      <a href="/register.html" class="btn-register-link">→ Criar nova conta</a>
+    </form>
+
+    <div class="footer-link">
+      Não tem conta? <a href="/register.html">Registre-se aqui</a>
+    </div>
+  </div>
+
+  <script>
+    function showMessage(text, type) {
+      const messageDiv = document.getElementById('message');
+      messageDiv.textContent = text;
+      messageDiv.className = 'message ' + type;
+      messageDiv.style.display = 'block';
+      setTimeout(() => {
+        messageDiv.style.display = 'none';
+      }, 4000);
+    }
+
+    // Restaurar username se "lembrar-me" estava ativado
+    if (localStorage.getItem('rememberUsername')) {
+      document.getElementById('username').value = localStorage.getItem('rememberUsername');
+      document.getElementById('rememberMe').checked = true;
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      const rememberMe = document.getElementById('rememberMe').checked;
+
+      // Validação
+      if (!username || !password) {
+        showMessage('❌ Preencha todos os campos', 'error');
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+
+        const data = await response.json();
+
+        if (response.status === 200) {
+          // Guardar user_id
+          localStorage.setItem('currentUser', data.user_id);
+          
+          // Guardar username se "lembrar-me" foi ativado
+          if (rememberMe) {
+            localStorage.setItem('rememberUsername', username);
+          } else {
+            localStorage.removeItem('rememberUsername');
+          }
+
+          showMessage('✅ Login realizado com sucesso! Redirecionando...', 'success');
+          setTimeout(() => {
+            window.location.href = '/index.html';
+          }, 1500);
+        } else {
+          showMessage('❌ ' + (data.error || 'Erro ao fazer login'), 'error');
+        }
+      } catch (error) {
+        showMessage('❌ Erro de conexão', 'error');
+      }
+    });
+  </script>
+</body>
+</html>
