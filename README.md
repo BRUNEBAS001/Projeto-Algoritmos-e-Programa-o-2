@@ -1,5 +1,5 @@
 
-Task's To Do — Sistema de Gerenciamento de Tarefas
+Task's To Do — Sistema de Gerenciamento de Tarefas (Projeto Algoritmos e Programação 2)
 
 Este repositório contém o projeto "Task's To Do": uma aplicação web para gerenciar tarefas com backend em Java e frontend em HTML/CSS.
 
@@ -51,9 +51,9 @@ Principais recursos:
 
 **Task's To Do** é um sistema completo e seguro de gerenciamento de tarefas com autenticação robusta e interface amigável.
 
-**Status:** ✅ Pronto para uso
+**Status:**  Pronto para uso
 
-Aproveite! 🚀
+
 =======
 ﻿# Projeto Algoritmos e Programacao 2  Site de Tarefas
 
