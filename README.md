@@ -1,7 +1,7 @@
 
 Task's To Do — Sistema de Gerenciamento de Tarefas
 
-Este repositório contém o projeto "Task's To Do": uma aplicação web para gerenciar tarefas com backend em Spring Boot e frontend em HTML/CSS/JavaScript.
+Este repositório contém o projeto "Task's To Do": uma aplicação web para gerenciar tarefas com backend em Java e frontend em HTML/CSS.
 
 Principais recursos:
 - Autenticação de usuários
@@ -25,29 +25,12 @@ Principais recursos:
 - Data Picker para Datas de Vencimento
 - Botões de Ação (Editar/Deletar/Concluir)
 
----
 
 ## 🔧 Configuração
 
-### application.properties
-```properties
-# Servidor
-server.port=8080
-
-# Banco de Dados
-spring.datasource.url=jdbc:sqlite:src/main/resources/database/tasks.db
-spring.datasource.driver-class-name=org.sqlite.JDBC
 
 
 
-## 📞 Suporte
-
-Para dúvidas sobre o sistema:
-1. Veja **AUTENTICACAO.md** - Funcionalidades
-2. Veja **TESTES_AUTENTICACAO.md** - Como testar
-3. Veja **SISTEMA_SEGURO.md** - Detalhes técnicos
-
----
 
 ## ✅ Checklist de Funcionalidades
 
@@ -60,12 +43,7 @@ Para dúvidas sobre o sistema:
 - [x] Marcação de tarefas como concluídas
 - [x] Categorização
 - [x] Interface responsiva
-- [x] Tema escuro
-- [x] Proteção contra SQL Injection
 - [x] Validação de entrada
-- [x] HTTP Status codes apropriados
-- [x] Documentação completa
-- [x] Testes de API
 
 ---
 
@@ -79,23 +57,18 @@ Aproveite! 🚀
 =======
 ﻿# Projeto Algoritmos e Programacao 2  Site de Tarefas
 
-Este repositório contém o projeto "Task's To Do": um sistema de gerenciamento de tarefas com backend em Spring Boot e frontend em HTML/CSS/JS.
+Este repositório contém o projeto "Task's To Do": um sistema de gerenciamento de tarefas com backend em java e frontend em HTML/CSS.
 
 Conteúdo incluído neste repositório:
 
-- Backend: código Java (Spring Boot), `pom.xml`, `src/main/resources/application.properties`, banco SQLite (`src/main/resources/tasks.db`)
-- Frontend: pasta `frontend/` com as páginas HTML, CSS e JS
+- Backend: código Java , `pom.xml`, `src/main/resources/application.properties`, banco SQLite (`src/main/resources/tasks.db`)
+- Frontend: pasta `frontend/` com as páginas HTML, CSS 
 - Documentação: `README_TASKS.md` (documentação completa do projeto)
 
 Instruções rápidas:
 
 1. Verifique se tem Java 17 e Maven instalados.
 2. Para compilar: `mvn clean package -DskipTests`
-3. Para rodar: `java -jar target/tasks-to-do-1.0.0.jar` (ou use `mvn spring-boot:run`)
+3. Para rodar:  `mvn spring-boot:run`
 
-Para documentação completa e exemplos de uso, veja `README_TASKS.md`.
 
----
-
-Se este arquivo estiver sendo gerado a partir de um merge anterior, ele foi consolidado automaticamente para remover conflitos e corrigir problemas de codificação/formatacao.
->>>>>>> cdb0fefe52f1f3cfdd2472fafdf2c20d09f401d8
